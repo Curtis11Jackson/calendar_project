@@ -2,4 +2,6 @@
 
 use branch master
 
-load fixtures
+load fixtures for Sales Reps & Clients
+
+posibility to login as sales rep or client
