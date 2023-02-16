@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AppointmentCalendarController!{% endblock %}
+
+{% block body %}
+    <h2>Welcome {{ infosConnectedUserAsClient.firstName }} {{ infosConnectedUserAsClient.lastName }}</h2>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Sales Rep</h1>
+                <div id="rep_table">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">First name</th>
+                            <th scope="col">Last name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for rep in repList %}
+                            <tr>
+                                <td>{{ rep.lastName }}</td>
+                                <td>{{ rep.firstName }}</td>
+                                <td>{{ rep.email }}</td>
+                                <td>{{ rep.phone }}</td>
+                                <td>
+                                    <a href="{{ path('app_appointment_calendar_availabilities', {'id': rep.id}) }}" class="btn btn-primary">Book an appointment</a>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+{% block modal %}
+
+{% endblock %}
